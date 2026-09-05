@@ -9,19 +9,10 @@
        ============================================================ */
 const albums = [
     {
-        title: "FEAR OF MISSING OUT",
-        year: "2026",
-        type: "OUT SEPTEMBER 15TH",
-        rating: 0,
-        image: "src/albumCovers/fomo.jpg",
-        description: "FOMO / Fear of Missing Out is Drake’s mysterious next project following his 2026 run of Iceman, Habibti, and Maid of Honour. The rollout has been deliberately cryptic, with Drake posting “FOMO 2026”, a CD case titled Fear of Missing Out, and now the September 15 YouTube announcement. Fans are speculating that it could be another music project, a visual project, or something entirely different.",
-        tracks: [
-            "NO TRACKS YET"
-        ]
-    },
-    {
         title: "So Far Gone",
         year: "2009",
+        color: "white",
+        bcolor: "#040404",
         type: "Mixtape",
         rating: 8.7,
         image: "src/albumCovers/so-far-gone.jpg",
@@ -50,6 +41,8 @@ const albums = [
     {
         title: "Thank Me Later",
         year: "2010",
+        color: "#c63727",
+        bcolor: "black",
         type: "Studio Album",
         rating: 7.8,
         image: "src/albumCovers/thank-me-later.jpg",
@@ -75,6 +68,8 @@ const albums = [
     {
         title: "Take Care",
         year: "2011",
+        color: "#B39676",
+        bcolor: "#2E1F17",
         type: "Studio Album",
         rating: 9.4,
         image: "src/albumCovers/take-care.jpg",
@@ -106,6 +101,8 @@ const albums = [
     {
         title: "Nothing Was the Same",
         year: "2013",
+        color: "#3b90bc",
+        bcolor: "#013351",
         type: "Studio Album",
         rating: 8.9,
         image: "src/albumCovers/NWST.jpg",
@@ -132,6 +129,8 @@ const albums = [
     {
         title: "If You're Reading This It's Too Late",
         year: "2015",
+        color: "#1E2123",
+        bcolor: "#D9D9DB",
         type: "Mixtape",
         rating: 8.6,
         image: "src/albumCovers/IYRTITL.jpg",
@@ -161,6 +160,8 @@ const albums = [
     {
         title: "What a Time to Be Alive",
         year: "2015",
+        color: "#BFBFC4",
+        bcolor: "#34343C",
         type: "Collaborative Album",
         rating: 7.3,
         image: "src/albumCovers/what-a-time-to-be-alive.jpg",
@@ -182,6 +183,8 @@ const albums = [
     {
         title: "Views",
         year: "2016",
+        color: "#ADB2B4",
+        bcolor: "#46535d",
         type: "Studio Album",
         rating: 7.5,
         image: "src/albumCovers/views.jpg",
@@ -212,6 +215,8 @@ const albums = [
     {
         title: "More Life",
         year: "2017",
+        color: "#1163A7",
+        bcolor: "#0A0909",
         type: "Playlist",
         rating: 8.2,
         image: "src/albumCovers/more-life.jpg",
@@ -244,6 +249,8 @@ const albums = [
     {
         title: "Scorpion",
         year: "2018",
+        color: "#CBCBCB",
+        bcolor: "#2f2f2f",
         type: "Studio Album",
         rating: 7.0,
         image: "src/albumCovers/scorpion.jpg",
@@ -279,6 +286,8 @@ const albums = [
     {
         title: "Care Package",
         year: "2019",
+        color: "#BBC3CE",
+        bcolor: "#0C0D0E",
         type: "Compilation",
         rating: 6.5,
         image: "src/albumCovers/care-package.jpg",
@@ -306,6 +315,8 @@ const albums = [
     {
         title: "Dark Lane Demo Tapes",
         year: "2020",
+        color: "#7C7C84",
+        bcolor: "#1A1C08",
         type: "Mixtape",
         rating: 6.8,
         image: "src/albumCovers/dld.jpg",
@@ -330,6 +341,8 @@ const albums = [
     {
         title: "Certified Lover Boy",
         year: "2021",
+        color: "#2B3348",
+        bcolor: "white",
         type: "Studio Album",
         rating: 6.9,
         image: "src/albumCovers/clb.jpg",
@@ -361,6 +374,8 @@ const albums = [
     {
         title: "Honestly, Nevermind",
         year: "2022",
+        color: "#BCB9B9",
+        bcolor: "#0D0F10",
         type: "Studio Album",
         rating: 7.6,
         image: "src/albumCovers/honestly-nevermind.jpg",
@@ -385,6 +400,8 @@ const albums = [
     {
         title: "Her Loss",
         year: "2022",
+        color: "#C0999C",
+        bcolor: "#231928",
         type: "Collaborative Album",
         rating: 8.0,
         image: "src/albumCovers/her-loss.jpg",
@@ -411,6 +428,8 @@ const albums = [
     {
         title: "For All the Dogs",
         year: "2023",
+        color: "#9EA29D",
+        bcolor: "#0B0B08",
         type: "Studio Album",
         rating: 6.6,
         image: "src/albumCovers/for-all-the-dogs.jpg",
@@ -444,6 +463,8 @@ const albums = [
     {
         title: "$ome $exy $ongs 4 U",
         year: "2025",
+        color: "#D8DBD6",
+        bcolor: "#0E1918",
         type: "Collaborative Album",
         rating: 6.4,
         image: "src/albumCovers/some-sexy-songs.jpg",
@@ -475,6 +496,8 @@ const albums = [
     {
         title: "ICEMAN",
         year: "2026",
+        color: "#B8B0AF",
+        bcolor: "#0C0A0A",
         type: "Mixtape",
         rating: 6.0,
         image: "src/albumCovers/iceman.jpg",
@@ -503,6 +526,8 @@ const albums = [
     {
         title: "Habibti",
         year: "2026",
+        color: "#5D4F4E",
+        bcolor: "#D7C1A6",
         type: "Mixtape",
         rating: 6.8,
         image: "src/albumCovers/habibti.jpg",
@@ -524,6 +549,8 @@ const albums = [
     {
         title: "Maid of Honor",
         year: "2026",
+        color: "#B39E99",
+        bcolor: "#4A3B3B",
         type: "Mixtape",
         rating: 6.8,
         image: "src/albumCovers/maid-of-honor.jpg",
@@ -544,6 +571,19 @@ const albums = [
             "Goose and The Juice",
             "Princess"
         ]
+    },
+    {
+        title: "FEAR OF MISSING OUT",
+        year: "2026",
+        color: "whitesmoke",
+        bcolor: "black",
+        type: "OUT SEPTEMBER 15TH",
+        rating: 0,
+        image: "src/albumCovers/fomo.jpg",
+        description: "FOMO / Fear of Missing Out is Drake’s mysterious next project following his 2026 run of Iceman, Habibti, and Maid of Honour. The rollout has been deliberately cryptic, with Drake posting “FOMO 2026”, a CD case titled Fear of Missing Out, and now the September 15 YouTube announcement. Fans are speculating that it could be another music project, a visual project, or something entirely different.",
+        tracks: [
+            "NO TRACKS YET"
+        ]
     }
 ];
 
@@ -557,6 +597,7 @@ const albums = [
     let wheelCooldown = false;
     const WHEEL_THRESHOLD = 48;
     const COOLDOWN_MS = 460;
+    const DEFAULT_GOLD = '#c3bd75';
 
     const carouselList = document.getElementById('carouselList');
     const carouselViewport = document.getElementById('carouselViewport');
@@ -651,7 +692,18 @@ const albums = [
         albumView.classList.toggle('is-visible', !showIntro);
         introBtn.classList.toggle('is-active', showIntro);
         scrollHint.classList.toggle('is-hidden', !showIntro && true);
-        if (showIntro) return;
+        if (showIntro) {
+            document.documentElement.style.setProperty('--gold', DEFAULT_GOLD);
+
+            const contentPanel = document.getElementById('contentPanel');
+            contentPanel.style.background = '';
+            contentPanel.style.color = '';
+
+            introBtn.innerText = "LAST";
+            introBtn.onclick = () => setActive(albums.length - 1);
+
+            return;
+        }
 
         const album = albums[activeIndex];
 
@@ -661,6 +713,18 @@ const albums = [
         document.getElementById('albumTitle').textContent = album.title;
         document.getElementById('albumYear').textContent = album.year;
         document.getElementById('albumDescription').textContent = album.description;
+
+        const contentPanel = document.getElementById('contentPanel');
+
+        contentPanel.style.background = album.bcolor;
+        contentPanel.style.color = album.color;
+
+        // Album-specific gold
+        document.documentElement.style.setProperty('--gold', album.color);
+
+        // Button when on an album
+        introBtn.innerText = "FIRST";
+        introBtn.onclick = () => setActive(-1);
 
         // Star rating out of 10, rendered as 10 characters.
         const filled = Math.round(album.rating);
@@ -684,7 +748,7 @@ const albums = [
         });
 
         // Reset scroll position of the content panel on each change.
-        document.getElementById('contentPanel').scrollTop = 0;
+        contentPanel.scrollTop = 0;
     }
 
     /* ------------------------------------------------------------
@@ -740,8 +804,6 @@ const albums = [
             step(-1);
         }
     });
-
-    introBtn.addEventListener('click', () => setActive(-1));
 
     /* ------------------------------------------------------------
        Init

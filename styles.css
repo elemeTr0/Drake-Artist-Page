@@ -6,7 +6,7 @@
     --ink: #f2ede4;
     --ink-dim: #ffffff;
     --ink-faint: #878787;
-    --gold: #ffffff;
+    --gold: #5573c3;
     --gold-soft: rgb(255 255 255 / 0.35);
     --spacing: 116px;
     --transition-speed: 480ms;
@@ -67,7 +67,7 @@ body{
 .intro-btn{
     background:transparent;
     border:1px solid var(--line);
-    color:var(--ink-dim);
+    color:#fff;
     font-family:'Inter', sans-serif;
     font-size:11px;
     font-weight:600;
@@ -77,14 +77,12 @@ body{
     cursor:pointer;
     transition:border-color 220ms ease, color 220ms ease, background 220ms ease;
 }
-.intro-btn:hover, .intro-btn:focus-visible{
-    border-color:var(--gold-soft);
-    color:var(--gold);
-    background:rgba(193,154,75,0.06);
-}
-.intro-btn.is-active{
-    border-color:var(--gold-soft);
-    color:var(--gold);
+
+.intro-btn:hover,
+.intro-btn:focus-visible{
+    border-color:#fff;
+    color:#fff;
+    background:rgba(255,255,255,0.06);
 }
 
 .carousel-viewport{
@@ -104,7 +102,6 @@ body{
 img {
     user-select: none;
     -webkit-user-drag: none;
-
 }
 .carousel-item{
     position:absolute;
@@ -284,7 +281,7 @@ img {
     line-height:0.86;
     letter-spacing:0.01em;
     margin:0 0 28px;
-    background:linear-gradient(180deg, #fff 0%, #676767 60%, #000000 100%);
+    background:linear-gradient(180deg, #fff 0%, #c5c1ac 60%, var(--gold) 100%);
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
@@ -376,7 +373,6 @@ img {
     font-size:11px;
     font-weight:600;
     letter-spacing:0.1em;
-    color:var(--gold);
     border:1px solid var(--gold-soft);
     border-radius:2px;
     padding:5px 10px;
@@ -387,7 +383,6 @@ img {
     font-size:clamp(44px, 5.2vw, 78px);
     line-height:0.94;
     margin:0 0 10px;
-    color:var(--ink);
 }
 .album-year{
     font-size:15px;
@@ -401,7 +396,6 @@ img {
 }
 .album-rating .stars{
     letter-spacing:2px;
-    color:var(--gold);
     font-size:17px;
 }
 .album-rating .stars .dim{ color: rgb(89 89 89 / 0.22); }
@@ -409,40 +403,25 @@ img {
     font-family:'Inter Tight', sans-serif;
     font-weight:700;
     font-size:20px;
-    color:var(--ink);
 }
 .album-rating .score span{
     font-size:13px;
-    color:var(--ink-faint);
     font-weight:500;
 }
 
 .album-description{
     font-size:19px;
     line-height:1.6;
-    color:var(--ink-dim);
     max-width:660px;
     margin-bottom:44px;
 }
-
 .section-label{
     font-size:12px;
     font-weight:700;
     letter-spacing:0.14em;
-    color:var(--ink-faint);
     margin-bottom:16px;
 }
-
-.album-review{
-    max-width:660px;
-    font-size:15.5px;
-    line-height:1.8;
-    color:var(--ink-dim);
-    margin-bottom:48px;
-}
-
 .tracks-list{
-    list-style:none;
     margin:0;
     padding:0;
     max-width:500px;
@@ -454,7 +433,6 @@ img {
     padding:13px 0;
     border-bottom:1px solid var(--line);
     font-size:15px;
-    color:var(--ink);
 }
 .tracks-list li:last-child{ border-bottom:none; }
 .tracks-list .dot{
