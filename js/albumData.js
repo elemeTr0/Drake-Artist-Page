@@ -573,7 +573,7 @@ const albums = [
         ]
     },
     {
-        title: "FEAR OF MISSING OUT",
+        title: "FOMO",
         year: "2026",
         color: "whitesmoke",
         bcolor: "black",
@@ -687,23 +687,29 @@ const albums = [
        Update the right-hand content panel to match activeIndex.
        ------------------------------------------------------------ */
     function renderContent(){
-        const showIntro = activeIndex < 0;
+        const showIntro = activeIndex === -1;
+
         introView.classList.toggle('is-visible', showIntro);
         albumView.classList.toggle('is-visible', !showIntro);
         introBtn.classList.toggle('is-active', showIntro);
-        scrollHint.classList.toggle('is-hidden', !showIntro && true);
+        scrollHint.classList.toggle('is-hidden', !showIntro);
+
         if (showIntro) {
             document.documentElement.style.setProperty('--gold', DEFAULT_GOLD);
 
-            const contentPanel = document.getElementById('contentPanel');
             contentPanel.style.background = '';
             contentPanel.style.color = '';
+
+            contentPanel.scrollTop = 0;
+            contentPanel.style.overflowY = 'hidden';
 
             introBtn.innerText = "LAST";
             introBtn.onclick = () => setActive(albums.length - 1);
 
             return;
         }
+
+        contentPanel.style.overflowY = 'auto';
 
         const album = albums[activeIndex];
 
@@ -714,43 +720,40 @@ const albums = [
         document.getElementById('albumYear').textContent = album.year;
         document.getElementById('albumDescription').textContent = album.description;
 
-        const contentPanel = document.getElementById('contentPanel');
-
         contentPanel.style.background = album.bcolor;
         contentPanel.style.color = album.color;
 
-        // Album-specific gold
         document.documentElement.style.setProperty('--gold', album.color);
 
-        // Button when on an album
         introBtn.innerText = "FIRST";
         introBtn.onclick = () => setActive(-1);
 
-        // Star rating out of 10, rendered as 10 characters.
         const filled = Math.round(album.rating);
         let starString = '';
+
         for (let i = 0; i < 10; i++){
-            starString += i < filled ? '★' : '<span class="dim">★</span>';
+            starString += i < filled
+                ? '★'
+                : '<span class="dim">★</span>';
         }
+
         document.getElementById('albumStars').innerHTML = starString;
+
         document.getElementById('albumScore').innerHTML =
             `${album.rating.toFixed(1)} <span>/ 10</span>`;
 
         const tracksEl = document.getElementById('albumTracks');
         tracksEl.innerHTML = '';
+
         album.tracks.forEach(track => {
             const li = document.createElement('li');
-            const dot = document.createElement('span');
-            dot.className = 'dot';
-            li.appendChild(dot);
+
             li.appendChild(document.createTextNode(track));
             tracksEl.appendChild(li);
         });
 
-        // Reset scroll position of the content panel on each change.
         contentPanel.scrollTop = 0;
     }
-
     /* ------------------------------------------------------------
        Move to a new active index, clamped to valid range.
        -1 = intro state, 0..albums.length-1 = an album.

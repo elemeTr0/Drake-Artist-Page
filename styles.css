@@ -166,6 +166,18 @@ img {
     border-radius: 12px;
 }
 .carousel-item.is-active .meta .title{ color:var(--ink); } .carousel-item.is-active .meta .year{ color:var(--gold); }
+.center-marker{
+    position:absolute;
+    top:50%;
+    left:8%;
+    right:8%;
+    height:1px;
+    transform:translateY(-50%);
+    opacity:0.55;
+    pointer-events:none;
+    z-index:5;
+    transition:background 480ms ease;
+}
 .center-marker::before, .center-marker::after{
     content:'';
     position:absolute;
@@ -174,7 +186,8 @@ img {
     border-radius:50%;
     background:var(--gold);
     transform:translateY(-50%);
-    box-shadow:0 0 8px 1px rgba(193,154,75,0.6);
+    box-shadow:0 0 8px 1px var(--gold);
+    transition:background 480ms ease;
 }
 .center-marker::before{ left:-2px; }
 .center-marker::after{ right:-2px; }
@@ -296,7 +309,7 @@ img {
 }
 .intro-body{
     max-width:600px;
-    font-size:15.5px;
+    font-size:15px;
     line-height:1.75;
     color:var(--ink-dim);
 }
@@ -314,7 +327,7 @@ img {
     color:var(--ink);
 }
 .intro-stat .label{
-    font-size:12.5px;
+    font-size:12px;
     color:var(--ink-faint);
     margin-top:4px;
 }
@@ -422,6 +435,7 @@ img {
     margin-bottom:16px;
 }
 .tracks-list{
+    list-style-type: decimal;
     margin:0;
     padding:0;
     max-width:500px;
@@ -431,7 +445,7 @@ img {
     align-items:center;
     gap:14px;
     padding:13px 0;
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid var(--gold);
     font-size:15px;
 }
 .tracks-list li:last-child{ border-bottom:none; }
