@@ -1,0 +1,454 @@
+:root{
+    --bg: #0c0b0a;
+    --panel: #000000;
+    --panel-raised: #1b1815;
+    --line: rgba(242,237,228,0.09);
+    --ink: #f2ede4;
+    --ink-dim: #a89f92;
+    --ink-faint: #6b6459;
+    --gold: #ffffff;
+    --gold-soft: rgb(255 255 255 / 0.35);
+    --spacing: 116px;
+    --transition-speed: 480ms;
+    --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+}
+::selection{ background:var(--gold-soft); color:var(--ink); }
+
+.app{
+    display:flex;
+    width:100vw;
+    height:100vh;
+}
+
+/* ============ LEFT: CAROUSEL ============ */
+.carousel-wrap{
+    position:relative;
+    width:10%;
+    min-width:340px;
+    height:100vh;
+    background:
+            radial-gradient(ellipse 80% 60% at 50% 50%, rgb(255 255 255 / 0.05), transparent 70%),
+            var(--panel);
+    border-right:1px solid var(--line);
+    overflow:hidden;
+    flex-shrink:0;
+}
+
+.carousel-topbar{
+    position:absolute;
+    top:0; left:0; right:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:28px 32px;
+    z-index:50;
+    pointer-events:none;
+}
+.carousel-topbar > *{ pointer-events:auto; }
+
+.brand-mark{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:20px;
+    letter-spacing:0.14em;
+    color:var(--ink-dim);
+}
+
+.intro-btn{
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink-dim);
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.12em;
+    padding:8px 14px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:border-color 220ms ease, color 220ms ease, background 220ms ease;
+}
+.intro-btn:hover, .intro-btn:focus-visible{
+    border-color:var(--gold-soft);
+    color:var(--gold);
+    background:rgba(193,154,75,0.06);
+}
+.intro-btn.is-active{
+    border-color:var(--gold-soft);
+    color:var(--gold);
+}
+
+.carousel-viewport{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.carousel-list{
+    position:absolute;
+    inset:0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    user-select: none;
+}
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+
+}
+.carousel-item{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:min(78%, 300px);
+    transform-origin:center center;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:10px;
+    border-radius:3px;
+    cursor:pointer;
+    will-change:transform, opacity, filter;
+    transition:
+            transform var(--transition-speed) var(--ease),
+            opacity var(--transition-speed) var(--ease),
+            filter var(--transition-speed) var(--ease);
+    background:transparent;
+}
+.carousel-item .cover{
+    width:64px;
+    height:64px;
+    flex-shrink:0;
+    border-radius:2px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.5);
+    position:relative;
+    overflow:hidden;
+    transition:box-shadow var(--transition-speed) var(--ease);
+}
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.cover-glyph {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.carousel-item .meta{
+    min-width:0;
+}
+.carousel-item .meta .title{
+    font-family:'Inter Tight', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color:var(--ink);
+}
+.carousel-item .meta .year{
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-top:3px;
+    letter-spacing:0.02em;
+}
+
+.carousel-item.is-active {
+    border: 2px solid white;
+    border-radius: 12px;
+}
+.carousel-item.is-active .meta .title{ color:var(--ink); } .carousel-item.is-active .meta .year{ color:var(--gold); }
+.center-marker::before, .center-marker::after{
+    content:'';
+    position:absolute;
+    top:50%;
+    width:4px; height:4px;
+    border-radius:50%;
+    background:var(--gold);
+    transform:translateY(-50%);
+    box-shadow:0 0 8px 1px rgba(193,154,75,0.6);
+}
+.center-marker::before{ left:-2px; }
+.center-marker::after{ right:-2px; }
+
+.scroll-hint{
+    position:absolute;
+    bottom:30px;
+    left:0; right:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    z-index:20;
+    pointer-events:none;
+    transition:opacity 400ms ease;
+}
+.scroll-hint .label{
+    font-size:11px;
+    letter-spacing:0.14em;
+    color:var(--ink-faint);
+    text-transform:uppercase;
+}
+.scroll-hint .chevrons{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+.scroll-hint svg{ display:block; }
+.scroll-hint .chevrons path{
+    animation:hint-pulse 1.8s ease-in-out infinite;
+}
+.scroll-hint .chevrons path:nth-child(2){ animation-delay:0.18s; }
+.scroll-hint .chevrons path:nth-child(3){ animation-delay:0.36s; }
+@keyframes hint-pulse{
+    0%, 100%{ opacity:0.15; }
+    50%{ opacity:0.7; }
+}
+.scroll-hint.is-hidden{ opacity:0; }
+
+/* ============ RIGHT: CONTENT ============ */
+.content-panel{
+    position:relative;
+    width: 100%;
+    height:100vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(242,237,228,0.15) transparent;
+}
+.content-panel::-webkit-scrollbar{ width:8px; }
+.content-panel::-webkit-scrollbar-thumb{ background:rgba(242,237,228,0.12); border-radius:4px; }
+
+.view{
+    position:absolute;
+    inset:0;
+    padding:9vh 7vw 8vh;
+    opacity:0;
+    transform:translateY(14px);
+    pointer-events:none;
+    transition:opacity 420ms var(--ease), transform 420ms var(--ease);
+}
+.view.is-visible{
+    position:relative;
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+/* --- Intro view --- */
+.intro-eyebrow{
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:0.06em;
+    margin-bottom:18px;
+}
+.intro-name{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:clamp(72px, 12vw, 168px);
+    line-height:0.86;
+    letter-spacing:0.01em;
+    margin:0 0 28px;
+    background:linear-gradient(180deg, #fff 0%, #d8cfc0 60%, #9a8f7d 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+.intro-lede{
+    font-size:22px;
+    line-height:1.5;
+    max-width:640px;
+    color:#e3ddd0;
+    font-weight:400;
+    margin:0 0 34px;
+}
+.intro-body{
+    max-width:600px;
+    font-size:15.5px;
+    line-height:1.75;
+    color:var(--ink-dim);
+}
+.intro-body p{ margin:0 0 18px; }
+.intro-stats{
+    display:flex;
+    gap:48px;
+    margin-top:44px;
+    flex-wrap:wrap;
+}
+.intro-stat .num{
+    font-family:'Inter Tight', sans-serif;
+    font-weight:700;
+    font-size:34px;
+    color:var(--ink);
+}
+.intro-stat .label{
+    font-size:12.5px;
+    color:var(--ink-faint);
+    margin-top:4px;
+}
+.intro-cta{
+    margin-top:50px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--ink-faint);
+    font-size:13px;
+}
+.intro-cta .arrow{
+    color:var(--gold);
+    animation:nudge 1.6s ease-in-out infinite;
+}
+@keyframes nudge{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(5px); }
+}
+
+/* --- Album view --- */
+.album-head{
+    display:flex;
+    gap:56px;
+    align-items:flex-end;
+    margin-bottom:52px;
+    flex-wrap:wrap;
+}
+.album-cover-large{
+    width:280px;
+    height:280px;
+    flex-shrink:0;
+    border-radius:4px;
+    box-shadow:0 30px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+    position:relative;
+    overflow:hidden;
+}
+.album-cover-large .cover-glyph{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Bebas Neue', sans-serif;
+    font-size:120px;
+    color:rgba(255,255,255,0.88);
+    text-shadow:0 6px 30px rgba(0,0,0,0.35);
+}
+.album-info-top{
+    flex:1;
+    min-width:280px;
+    padding-bottom:8px;
+}
+.album-type-badge{
+    display:inline-block;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.1em;
+    color:var(--gold);
+    border:1px solid var(--gold-soft);
+    border-radius:2px;
+    padding:5px 10px;
+    margin-bottom:16px;
+}
+.album-title{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:clamp(44px, 5.2vw, 78px);
+    line-height:0.94;
+    margin:0 0 10px;
+    color:var(--ink);
+}
+.album-year{
+    font-size:15px;
+    color:var(--ink-faint);
+    margin-bottom:24px;
+}
+.album-rating{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+}
+.album-rating .stars{
+    letter-spacing:2px;
+    color:var(--gold);
+    font-size:17px;
+}
+.album-rating .stars .dim{ color:rgba(193,154,75,0.22); }
+.album-rating .score{
+    font-family:'Inter Tight', sans-serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--ink);
+}
+.album-rating .score span{
+    font-size:13px;
+    color:var(--ink-faint);
+    font-weight:500;
+}
+
+.album-description{
+    font-size:19px;
+    line-height:1.6;
+    color:#e3ddd0;
+    max-width:660px;
+    margin-bottom:44px;
+}
+
+.section-label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    color:var(--ink-faint);
+    margin-bottom:16px;
+}
+
+.album-review{
+    max-width:660px;
+    font-size:15.5px;
+    line-height:1.8;
+    color:var(--ink-dim);
+    margin-bottom:48px;
+}
+
+.tracks-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    max-width:500px;
+}
+.tracks-list li{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+    color:var(--ink);
+}
+.tracks-list li:last-child{ border-bottom:none; }
+.tracks-list .dot{
+    width:5px; height:5px;
+    border-radius:50%;
+    background:var(--gold);
+    flex-shrink:0;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 880px){
+    body{ overflow:auto; }
+    .app{ flex-direction:column; height:auto; min-height:100vh; }
+    .carousel-wrap{ width:100%; height:56vh; min-width:0; border-right:none; border-bottom:1px solid var(--line); }
+    .content-panel{ width:100%; height:auto; overflow:visible; }
+    .view{ position:relative; padding:7vh 6vw 8vh; }
+    .view:not(.is-visible){ display:none; }
+    .album-head{ gap:28px; }
+    .album-cover-large{ width:180px; height:180px; }
+    .album-cover-large .cover-glyph{ font-size:76px; }
+    .intro-stats{ gap:32px; }
+}

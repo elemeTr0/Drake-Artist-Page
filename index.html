@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drake — A Discography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ LEFT CAROUSEL ============ -->
+  <aside class="carousel-wrap" id="carouselWrap">
+    <div class="carousel-topbar">
+      <div class="brand-mark">DRAKE — DISCOGRAPHY</div>
+      <button class="intro-btn" id="introBtn">INTRO</button>
+    </div>
+
+    <div class="carousel-viewport" id="carouselViewport">
+      <ul class="carousel-list" id="carouselList"></ul>
+      <div class="center-marker"></div>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint">
+      <div class="label">Scroll to explore</div>
+      <div class="chevrons">
+        <svg width="16" height="9" viewBox="0 0 16 9" fill="none"><path d="M1 1L8 7L15 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <svg width="16" height="9" viewBox="0 0 16 9" fill="none"><path d="M1 1L8 7L15 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ RIGHT CONTENT ============ -->
+  <main class="content-panel" id="contentPanel">
+
+    <section class="view is-visible" id="introView">
+      <div class="intro-eyebrow">AN ARTIST OVER TWO DECADES</div>
+      <h1 class="intro-name">DRAKE</h1>
+      <p class="intro-lede">An exploration of the albums, eras, and evolution of one of the most influential artists of his generation.</p>
+      <div class="intro-body">
+        <p>Aubrey Drake Graham emerged from Toronto in the late 2000s and, over a run of mixtapes and albums, rewired what a rap star was allowed to sound like — part confessional singer, part hitmaker, part internet-native provocateur. His catalog moves between moods as much as genres: the wounded soul of <em>Take Care</em>, the arena-sized bravado of <em>Views</em>, the loose, single-driven sprawl of his 2020s run.</p>
+        <p>This site traces that catalog project by project, from the early mixtape years that built his name to the sprawling, collaborative present. Use the wheel on the left to move through the timeline — scroll, click, or use the arrow keys to bring a project to the center and its story will appear here.</p>
+      </div>
+      <div class="intro-stats">
+        <div class="intro-stat"><div class="num">19</div><div class="label">Projects catalogued</div></div>
+        <div class="intro-stat"><div class="num">2006–2025</div><div class="label">Years spanned</div></div>
+        <div class="intro-stat"><div class="num">OVO</div><div class="label">Toronto, Canada</div></div>
+      </div>
+      <div class="intro-cta"><span class="arrow">↓</span> Scroll the carousel to begin</div>
+    </section>
+
+    <section class="view" id="albumView">
+      <div class="album-head">
+        <div class="album-cover-large" id="albumCoverLarge">
+          <img class="cover-glyph" id="albumCoverGlyph" src="" alt="Album cover">
+        </div>
+
+        <div class="album-info-top">
+          <div class="album-type-badge" id="albumType"></div>
+          <h2 class="album-title" id="albumTitle"></h2>
+          <div class="album-year" id="albumYear"></div>
+
+          <div class="album-rating">
+            <div class="stars" id="albumStars"></div>
+            <div class="score" id="albumScore"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="album-description" id="albumDescription"></p>
+
+
+      <div class="section-label">Tracks</div>
+      <ul class="tracks-list" id="albumTracks"></ul>
+    </section>
+
+  </main>
+
+</div>
+
+
+<script src="js/albumData.js"></script>
+
+</body>
+</html>
