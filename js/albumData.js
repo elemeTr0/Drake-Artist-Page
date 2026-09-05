@@ -565,6 +565,7 @@ const albums = [
     const introView = document.getElementById('introView');
     const albumView = document.getElementById('albumView');
 
+
     /* ------------------------------------------------------------
        Build carousel DOM once. Each <li> is positioned every
        render via CSS transform based on its distance from the

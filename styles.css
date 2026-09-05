@@ -4,8 +4,8 @@
     --panel-raised: #1b1815;
     --line: rgba(242,237,228,0.09);
     --ink: #f2ede4;
-    --ink-dim: #a89f92;
-    --ink-faint: #6b6459;
+    --ink-dim: #ffffff;
+    --ink-faint: #878787;
     --gold: #ffffff;
     --gold-soft: rgb(255 255 255 / 0.35);
     --spacing: 116px;
@@ -219,16 +219,24 @@ img {
 
 /* ============ RIGHT: CONTENT ============ */
 .content-panel{
+    background:#000000;
     position:relative;
-    width: 100%;
+    width:100%;
     height:100vh;
     overflow-y:auto;
     overflow-x:hidden;
     scrollbar-width:thin;
     scrollbar-color:rgba(242,237,228,0.15) transparent;
 }
-.content-panel::-webkit-scrollbar{ width:8px; }
-.content-panel::-webkit-scrollbar-thumb{ background:rgba(242,237,228,0.12); border-radius:4px; }
+
+.content-panel::-webkit-scrollbar{
+    width:8px;
+}
+
+.content-panel::-webkit-scrollbar-thumb{
+    background:rgba(242,237,228,0.12);
+    border-radius:4px;
+}
 
 .view{
     position:absolute;
@@ -238,12 +246,16 @@ img {
     transform:translateY(14px);
     pointer-events:none;
     transition:opacity 420ms var(--ease), transform 420ms var(--ease);
+    box-sizing:border-box;
 }
+
 .view.is-visible{
     position:relative;
     opacity:1;
     transform:translateY(0);
     pointer-events:auto;
+    box-sizing:border-box;
+    min-height:100vh;
 }
 
 /* --- Intro view --- */
@@ -253,13 +265,26 @@ img {
     letter-spacing:0.06em;
     margin-bottom:18px;
 }
+#intro-img {
+    position: absolute;
+    right: -100px;
+    top: 0;
+    height: 100vh;
+    max-width: 800px;
+    object-fit: cover;
+
+    mask-image:
+            linear-gradient(to right, transparent 1%, black 100%),
+            linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-composite: intersect;
+}
 .intro-name{
     font-family:'Bebas Neue', sans-serif;
     font-size:clamp(72px, 12vw, 168px);
     line-height:0.86;
     letter-spacing:0.01em;
     margin:0 0 28px;
-    background:linear-gradient(180deg, #fff 0%, #d8cfc0 60%, #9a8f7d 100%);
+    background:linear-gradient(180deg, #fff 0%, #676767 60%, #000000 100%);
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
@@ -268,7 +293,7 @@ img {
     font-size:22px;
     line-height:1.5;
     max-width:640px;
-    color:#e3ddd0;
+    color: #ffffff;
     font-weight:400;
     margin:0 0 34px;
 }
@@ -379,7 +404,7 @@ img {
     color:var(--gold);
     font-size:17px;
 }
-.album-rating .stars .dim{ color:rgba(193,154,75,0.22); }
+.album-rating .stars .dim{ color: rgb(89 89 89 / 0.22); }
 .album-rating .score{
     font-family:'Inter Tight', sans-serif;
     font-weight:700;
@@ -395,7 +420,7 @@ img {
 .album-description{
     font-size:19px;
     line-height:1.6;
-    color:#e3ddd0;
+    color:var(--ink-dim);
     max-width:660px;
     margin-bottom:44px;
 }
