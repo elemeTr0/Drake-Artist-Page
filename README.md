@@ -108,7 +108,7 @@ It focuses on combining **frontend development, UI/UX design, animations, and Ty
 
 ## 📸 Preview
 
-*Screenshots and a live demo can be added here.*
+<img width="1899" height="945" alt="image" src="https://github.com/user-attachments/assets/9c45a0e5-a44e-4628-a7d8-1ee37adbce1e" />
 
 ---
 
