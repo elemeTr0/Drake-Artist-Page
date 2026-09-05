@@ -693,9 +693,10 @@ const albums = [
         albumView.classList.toggle('is-visible', !showIntro);
         introBtn.classList.toggle('is-active', showIntro);
         scrollHint.classList.toggle('is-hidden', !showIntro);
-
+        const contentPanel = document.getElementById("contentPanel");
         if (showIntro) {
             document.documentElement.style.setProperty('--gold', DEFAULT_GOLD);
+
 
             contentPanel.style.background = '';
             contentPanel.style.color = '';
