@@ -23,7 +23,7 @@ An interactive web experience exploring Drake's discography, albums, mixtapes, a
 
 * **HTML5** — Page structure and semantic markup
 * **CSS3** — Layout, animations, styling, and responsive design
-* **TypeScript** — Interactive functionality and application logic
+* **JavaScript** — Interactive functionality and application logic
 
 ---
 
