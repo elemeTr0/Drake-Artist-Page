@@ -233,7 +233,7 @@ img {
     position:relative;
     width:100%;
     height:100vh;
-    overflow-y:auto;
+    overflow-y:hidden;
     overflow-x:hidden;
     scrollbar-width:thin;
     scrollbar-color:rgba(242,237,228,0.15) transparent;
@@ -311,7 +311,6 @@ img {
     max-width:600px;
     font-size:15px;
     line-height:1.75;
-    color:var(--ink-dim);
 }
 .intro-body p{ margin:0 0 18px; }
 .intro-stats{
@@ -324,11 +323,9 @@ img {
     font-family:'Inter Tight', sans-serif;
     font-weight:700;
     font-size:34px;
-    color:var(--ink);
 }
 .intro-stat .label{
     font-size:12px;
-    color:var(--ink-faint);
     margin-top:4px;
 }
 .intro-cta{
@@ -426,6 +423,7 @@ img {
     font-size:19px;
     line-height:1.6;
     max-width:660px;
+    min-height: 350px;
     margin-bottom:44px;
 }
 .section-label{
@@ -438,7 +436,11 @@ img {
     list-style-type: decimal;
     margin:0;
     padding:0;
-    max-width:500px;
+    max-width:300px;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width:thin;
+    scrollbar-color: var(--gold) transparent;
 }
 .tracks-list li{
     display:flex;
@@ -456,6 +458,90 @@ img {
     flex-shrink:0;
 }
 
+.spotify-player {
+    visibility: hidden;
+    position: absolute;
+    right: 50%;
+    top:50%;
+    width: 300px;
+    z-index: 1000;
+}
+
+.spotify-drag-handle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 32px;
+    padding: 0 12px;
+
+    background: #1ed760;
+    color: #000;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    border-radius: 10px 10px 0 0;
+
+    cursor: grab;
+    user-select: none;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+    transition: background-color 0.2s ease;
+}
+
+.spotify-drag-handle:hover {
+    background: #1fdf64;
+}
+
+.spotify-drag-handle:active {
+    cursor: grabbing;
+}
+#drag{
+    font-size: 10px;
+    float: right;
+}
+#spotify-open {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    width: 200px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    outline: none;
+    border-radius: 50px;
+
+    background: #1ed760;
+    color: #000;
+
+    cursor: pointer;
+
+    box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.35);
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            background-color 0.25s ease;
+}
+
+#spotify-open:hover {
+    background: #1fdf64;
+
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow:
+            0 8px 25px rgba(30, 215, 96, 0.25),
+            0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+#spotify-open:active {
+    transform: translateY(0) scale(0.98);
+}
 /* ============ RESPONSIVE ============ */
 @media (max-width: 880px){
     body{ overflow:auto; }

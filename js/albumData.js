@@ -11,6 +11,7 @@ const albums = [
     {
         title: "So Far Gone",
         year: "2009",
+        spotify:"https://open.spotify.com/embed/album/1LShhEEKRT5MNPcO7jtYHh?si=SRe_KonLQNWWvl7IMyQtNQ",
         color: "white",
         bcolor: "#040404",
         type: "Mixtape",
@@ -41,6 +42,7 @@ const albums = [
     {
         title: "Thank Me Later",
         year: "2010",
+        spotify:"https://open.spotify.com/embed/album/6agmeioaDOBupymziJihgB?si=leivrJfNR8-1AD1Nx97kqw",
         color: "#c63727",
         bcolor: "black",
         type: "Studio Album",
@@ -68,6 +70,7 @@ const albums = [
     {
         title: "Take Care",
         year: "2011",
+        spotify:"https://open.spotify.com/embed/album/6X1x82kppWZmDzlXXK3y3q?si=o-HKA4fjT4GeEj-dRQfvLQ",
         color: "#B39676",
         bcolor: "#2E1F17",
         type: "Studio Album",
@@ -101,6 +104,7 @@ const albums = [
     {
         title: "Nothing Was the Same",
         year: "2013",
+        spotify:"https://open.spotify.com/embed/album/2ZUFSbIkmFkGag000RWOpA?si=rDdbPvIdTeC4HSfwo_Uabw",
         color: "#3b90bc",
         bcolor: "#013351",
         type: "Studio Album",
@@ -129,6 +133,7 @@ const albums = [
     {
         title: "If You're Reading This It's Too Late",
         year: "2015",
+        spotify:"https://open.spotify.com/embed/album/0ptlfJfwGTy0Yvrk14JK1I?si=4mxR-y2LQ0qE0NS3-R1tNA",
         color: "#1E2123",
         bcolor: "#D9D9DB",
         type: "Mixtape",
@@ -160,6 +165,7 @@ const albums = [
     {
         title: "What a Time to Be Alive",
         year: "2015",
+        spotify:"https://open.spotify.com/embed/album/1ozpmkWcCHwsQ4QTnxOOdT?si=nakAfmNXSo6QhNbvNvGv4w",
         color: "#BFBFC4",
         bcolor: "#34343C",
         type: "Collaborative Album",
@@ -183,6 +189,7 @@ const albums = [
     {
         title: "Views",
         year: "2016",
+        spotify:"https://open.spotify.com/embed/album/40GMAhriYJRO1rsY4YdrZb?si=v9L-_b2DSpKtkhdpuZ7Iig",
         color: "#ADB2B4",
         bcolor: "#46535d",
         type: "Studio Album",
@@ -215,6 +222,7 @@ const albums = [
     {
         title: "More Life",
         year: "2017",
+        spotify:"https://open.spotify.com/embed/album/1lXY618HWkwYKJWBRYR4MK?si=rbzqrxizTBWe5U0BqqCP0w",
         color: "#1163A7",
         bcolor: "#0A0909",
         type: "Playlist",
@@ -249,6 +257,7 @@ const albums = [
     {
         title: "Scorpion",
         year: "2018",
+        spotify:"https://open.spotify.com/embed/album/1ATL5GLyefJaxhQzSPVrLX?si=rBtWaLPJTXyhKYcupFmQ7Q",
         color: "#CBCBCB",
         bcolor: "#2f2f2f",
         type: "Studio Album",
@@ -286,6 +295,7 @@ const albums = [
     {
         title: "Care Package",
         year: "2019",
+        spotify:"https://open.spotify.com/embed/album/7dqpveMVcWgbzqYrOdkFTD?si=x-KOTOm4TWKjeq5BPlS6mQ",
         color: "#BBC3CE",
         bcolor: "#0C0D0E",
         type: "Compilation",
@@ -315,6 +325,7 @@ const albums = [
     {
         title: "Dark Lane Demo Tapes",
         year: "2020",
+        spotify:"https://open.spotify.com/embed/album/6OQ9gBfg5EXeNAEwGSs6jK?si=ZQ79STyvT-yes5UevOR1wA",
         color: "#7C7C84",
         bcolor: "#1A1C08",
         type: "Mixtape",
@@ -341,6 +352,7 @@ const albums = [
     {
         title: "Certified Lover Boy",
         year: "2021",
+        spotify:"https://open.spotify.com/embed/album/3SpBlxme9WbeQdI9kx7KAV?si=JJYj_69XSMCsn7nbLC_Rjg",
         color: "#2B3348",
         bcolor: "white",
         type: "Studio Album",
@@ -374,6 +386,7 @@ const albums = [
     {
         title: "Honestly, Nevermind",
         year: "2022",
+        spotify:"https://open.spotify.com/embed/album/3cf4iSSKd8ffTncbtKljXw?si=89ahzL1DRGir8rw3AUIDKA",
         color: "#BCB9B9",
         bcolor: "#0D0F10",
         type: "Studio Album",
@@ -400,6 +413,7 @@ const albums = [
     {
         title: "Her Loss",
         year: "2022",
+        spotify:"https://open.spotify.com/embed/album/5MS3MvWHJ3lOZPLiMxzOU6?si=M1Pog75wTk2JebAyOwyIfQ",
         color: "#C0999C",
         bcolor: "#231928",
         type: "Collaborative Album",
@@ -428,6 +442,7 @@ const albums = [
     {
         title: "For All the Dogs",
         year: "2023",
+        spotify:"https://open.spotify.com/embed/album/4czdORdCWP9umpbhFXK2fW?si=gD9Haf5mR8eO53WLXU4Oyg",
         color: "#9EA29D",
         bcolor: "#0B0B08",
         type: "Studio Album",
@@ -463,6 +478,7 @@ const albums = [
     {
         title: "$ome $exy $ongs 4 U",
         year: "2025",
+        spotify:"https://open.spotify.com/embed/album/6Rl6YoCarF2GHPSQmmFjuR?si=66FayyXgRTmk35dJ2b5HAw",
         color: "#D8DBD6",
         bcolor: "#0E1918",
         type: "Collaborative Album",
@@ -496,6 +512,7 @@ const albums = [
     {
         title: "ICEMAN",
         year: "2026",
+        spotify:"https://open.spotify.com/embed/album/0OAv7DCME2AV4q1KPO95HY?si=U7MyA54OQzmiwI6NjVKCBg",
         color: "#B8B0AF",
         bcolor: "#0C0A0A",
         type: "Mixtape",
@@ -526,6 +543,7 @@ const albums = [
     {
         title: "Habibti",
         year: "2026",
+        spotify:"https://open.spotify.com/embed/album/0P6B5R3yRSkhkmequL5Yno?si=4hICNXhqTZSn9TcQziDAOQ",
         color: "#5D4F4E",
         bcolor: "#D7C1A6",
         type: "Mixtape",
@@ -549,6 +567,7 @@ const albums = [
     {
         title: "Maid of Honor",
         year: "2026",
+        spotify:"https://open.spotify.com/embed/album/71yBvOeRZ9os9LYFEy9eOk?si=TDoR2bIwRTK4s8d15neeCQ",
         color: "#B39E99",
         bcolor: "#4A3B3B",
         type: "Mixtape",
@@ -702,7 +721,6 @@ const albums = [
             contentPanel.style.color = '';
 
             contentPanel.scrollTop = 0;
-            contentPanel.style.overflowY = 'hidden';
 
             introBtn.innerText = "LAST";
             introBtn.onclick = () => setActive(albums.length - 1);
@@ -710,7 +728,7 @@ const albums = [
             return;
         }
 
-        contentPanel.style.overflowY = 'auto';
+        contentPanel.style.overflowY = 'hidden';
 
         const album = albums[activeIndex];
 
@@ -720,6 +738,7 @@ const albums = [
         document.getElementById('albumTitle').textContent = album.title;
         document.getElementById('albumYear').textContent = album.year;
         document.getElementById('albumDescription').textContent = album.description;
+        document.getElementById('spotifyPlayer').src = album.spotify;
 
         contentPanel.style.background = album.bcolor;
         contentPanel.style.color = album.color;
@@ -779,24 +798,28 @@ const albums = [
        ------------------------------------------------------------ */
     carouselViewport.addEventListener('wheel', (e) => {
         e.preventDefault();
+
         if (wheelCooldown) return;
 
         wheelAccumulator += e.deltaY;
 
-        if (wheelAccumulator > WHEEL_THRESHOLD){
-            step(1);
-            wheelAccumulator = 0;
-            lockWheel();
-        } else if (wheelAccumulator < -WHEEL_THRESHOLD){
-            step(-1);
-            wheelAccumulator = 0;
-            lockWheel();
-        }
-    }, { passive:false });
+        if (Math.abs(wheelAccumulator) >= WHEEL_THRESHOLD) {
+            const direction = wheelAccumulator > 0 ? 1 : -1;
 
-    function lockWheel(){
+            wheelAccumulator = 0;
+            lockWheel();
+
+            step(direction);
+        }
+    }, { passive: false });
+
+    function lockWheel() {
         wheelCooldown = true;
-        setTimeout(() => { wheelCooldown = false; }, COOLDOWN_MS);
+
+        setTimeout(() => {
+            wheelCooldown = false;
+            wheelAccumulator = 0;
+        }, COOLDOWN_MS);
     }
 
     window.addEventListener('keydown', (e) => {

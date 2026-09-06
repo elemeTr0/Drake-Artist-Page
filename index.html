@@ -73,10 +73,24 @@
       </div>
 
       <p class="album-description" id="albumDescription"></p>
+      <button id="spotify-open">OPEN SPOTIFY PLAYER</button>
+<!--      <ol class="tracks-list" id="albumTracks"></ol>-->
+      <div class="spotify-player" id="spotifyPlayerContainer">
 
+        <div class="spotify-drag-handle">
+          <span>♫ Tracks</span>
+          <span id="drag">DRAG ME</span>
+        </div>
 
-      <div class="section-label">Tracks</div>
-      <ol class="tracks-list" id="albumTracks"></ol>
+        <iframe
+                id="spotifyPlayer"
+                width="100%"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+        </iframe>
+
+      </div>
     </section>
 
   </main>
@@ -85,6 +99,7 @@
 
 
 <script src="js/albumData.js"></script>
+<script src="js/spotify.js"></script>
 
 </body>
 </html>
