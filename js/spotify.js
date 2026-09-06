@@ -9,26 +9,32 @@ player.addEventListener('mousedown', (e) => {
 
     const rect = player.getBoundingClientRect();
 
-    // Calculate cursor position inside the player FIRST
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
-
-    if(window.innerWidth > 880){
-        offsetX = offsetX + 340;
-    }else{
-        offsetY = offsetY - 140;
-    }
-
-    // Then convert its current position to left/top
 
     isDragging = true;
 });
 
+const CAROUSEL_WIDTH = 340; // must match .carousel-wrap's actual width
+
 document.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
 
-    player.style.left = `${e.clientX - offsetX}px`;
-    player.style.top = `${e.clientY - offsetY}px`;
+    const rect = player.getBoundingClientRect();
+
+    let newLeft = e.clientX - offsetX;
+    let newTop = e.clientY - offsetY;
+
+    // Don't allow it left of the carousel on desktop
+    const minLeft = window.innerWidth >= 880 ? CAROUSEL_WIDTH : 0;
+    const maxLeft = window.innerWidth - rect.width;
+    const maxTop = window.innerHeight - rect.height;
+
+    newLeft = Math.max(minLeft, Math.min(newLeft, maxLeft));
+    newTop = Math.max(0, Math.min(newTop, maxTop));
+
+    player.style.left = `${newLeft}px`;
+    player.style.top = `${newTop}px`;
 });
 
 document.addEventListener('mouseup', () => {

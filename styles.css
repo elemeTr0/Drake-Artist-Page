@@ -466,9 +466,9 @@ img {
 
 .spotify-player {
     visibility: hidden;
-    position: absolute;
-    right: 50%;
-    top:50%;
+    position: fixed;
+    left: calc(50% - 150px);
+    top: 50%;
     width: 300px;
     z-index: 1000;
 }
@@ -510,6 +510,9 @@ img {
     float: right;
 }
 #spotify-open {
+
+    position: absolute;
+    top: 90vh;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
@@ -553,16 +556,37 @@ img {
     body{ overflow:auto; }
     .app{ flex-direction:column; height:auto; min-height:100vh; }
     .carousel-wrap{ width:100%; height:56vh; min-width:0; border-right:none; border-bottom:1px solid var(--line); }
-    .content-panel{ width:100%; height:auto; overflow:hidden; }
+    .content-panel{ width:100%; height:auto; overflow:visible; }
     .view{ position:relative; padding:7vh 6vw 8vh; }
     .view:not(.is-visible){ display:none; }
     .album-head{ gap:28px; }
     .album-cover-large{ width:180px; height:180px; }
     .album-cover-large .cover-glyph{ font-size:76px; }
     .intro-stats{ gap:32px; }
-    .spotify-player {
-        position: fixed;
-    }
-    .spotify--player{ height: 80px ;}
 
+    /* was absolute + height:100vh, blew out the mobile layout */
+    #intro-img{
+        position:relative;
+        right:auto;
+        top:auto;
+        width:100%;
+        height:auto;
+        max-height:38vh;
+        margin:0 0 24px;
+    }
+
+.spotify-player{
+    width: 280px;
+    max-width: calc(100vw - 32px);
+    height: 50px;
+}
+    #spotify-open{
+        position:relative;
+        top:auto;
+        left:auto;
+        display:block;
+        width:200px;
+        max-width:100%;
+        margin:32px auto 0;
+    }
 }

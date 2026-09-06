@@ -749,6 +749,7 @@ const albums = [
             contentPanel.style.color = '';
             contentPanel.scrollTop = 0;
             introBtn.innerText = "LAST";
+            document.getElementById('spotifyPlayerContainer').style.visibility = 'hidden';
             introBtn.onclick = () => setActive(albums.length - 1);
             return;
         }
@@ -860,4 +861,7 @@ const albums = [
     renderContent();
 
     window.addEventListener('resize', positionItems);
+
+    // run once, e.g. right after DOMContentLoaded / at the bottom of your script
+document.body.appendChild(document.getElementById('spotifyPlayerContainer'));
 })();
