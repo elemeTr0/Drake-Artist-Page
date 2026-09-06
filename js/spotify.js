@@ -10,8 +10,14 @@ player.addEventListener('mousedown', (e) => {
     const rect = player.getBoundingClientRect();
 
     // Calculate cursor position inside the player FIRST
-    offsetX = e.clientX - rect.left + 340;
+    offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
+
+    if(window.innerWidth > 880){
+        offsetX = offsetX + 340;
+    }else{
+        offsetY = offsetY - 140;
+    }
 
     // Then convert its current position to left/top
 
