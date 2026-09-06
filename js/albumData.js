@@ -701,11 +701,33 @@ const albums = [
         const h = carouselViewport.clientHeight;
         return h < 640 ? 88 : 116;
     }
+    function animateTitle(newTitle, direction) {
+        const title = document.getElementById('albumTitle');
 
+        title.style.opacity = '0';
+        title.style.transform =
+            direction === 1
+                ? 'translateY(-20px)'
+                : 'translateY(20px)';
+
+        setTimeout(() => {
+            title.textContent = newTitle;
+
+            title.style.transform =
+                direction === 1
+                    ? 'translateY(20px)'
+                    : 'translateY(-20px)';
+
+            requestAnimationFrame(() => {
+                title.style.opacity = '1';
+                title.style.transform = 'translateY(0)';
+            });
+        }, 200);
+    }
     /* ------------------------------------------------------------
        Update the right-hand content panel to match activeIndex.
        ------------------------------------------------------------ */
-    function renderContent(){
+    function renderContent(direction){
         const showIntro = activeIndex === -1;
 
         introView.classList.toggle('is-visible', showIntro);
@@ -735,7 +757,7 @@ const albums = [
         document.getElementById('albumCoverLarge').src = album.image;
         document.getElementById('albumCoverGlyph').src = album.image;
         document.getElementById('albumType').textContent = album.type.toUpperCase();
-        document.getElementById('albumTitle').textContent = album.title;
+        animateTitle(album.title, direction);
         document.getElementById('albumYear').textContent = album.year;
         document.getElementById('albumDescription').textContent = album.description;
         document.getElementById('spotifyPlayer').src = album.spotify;
@@ -778,16 +800,16 @@ const albums = [
        Move to a new active index, clamped to valid range.
        -1 = intro state, 0..albums.length-1 = an album.
        ------------------------------------------------------------ */
-    function setActive(index){
+    function setActive(index, direction){
         const clamped = Math.max(-1, Math.min(albums.length - 1, index));
         if (clamped === activeIndex) return;
         activeIndex = clamped;
         positionItems();
-        renderContent();
+        renderContent(direction);
     }
 
     function step(delta){
-        setActive(activeIndex + delta);
+        setActive(activeIndex + delta, delta);
     }
 
     /* ------------------------------------------------------------

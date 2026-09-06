@@ -396,6 +396,9 @@ img {
     font-size:clamp(44px, 5.2vw, 78px);
     line-height:0.94;
     margin:0 0 10px;
+    transition:
+            transform 0.35s ease,
+            opacity 0.35s ease;
 }
 .album-year{
     font-size:15px;
