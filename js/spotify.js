@@ -47,3 +47,9 @@ openBtn.addEventListener('click', () => {
     const isOpen = player.style.visibility === 'visible';
     player.style.visibility = isOpen ? 'hidden' : 'visible';
 });
+
+const closeBtn = document.getElementById("closeSpotify");
+
+closeBtn.addEventListener('click', () => {
+    player.style.visibility = 'hidden';
+});
