@@ -37,11 +37,7 @@ document.addEventListener('mouseup', () => {
 
 const openBtn = document.getElementById("spotify-open");
 
-let bool = false;
-function show(){
-    bool = !bool;
-    if(bool) document.getElementById("spotifyPlayerContainer").style.visibility = 'visible';
-    else document.getElementById("spotifyPlayerContainer").style.visibility = 'hidden'
-}
-
-openBtn.addEventListener('click', show)
+openBtn.addEventListener('click', () => {
+    const isOpen = player.style.visibility === 'visible';
+    player.style.visibility = isOpen ? 'hidden' : 'visible';
+});

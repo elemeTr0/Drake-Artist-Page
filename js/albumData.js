@@ -599,10 +599,7 @@ const albums = [
         type: "OUT SEPTEMBER 15TH",
         rating: 0,
         image: "src/albumCovers/fomo.jpg",
-        description: "FOMO / Fear of Missing Out is Drake’s mysterious next project following his 2026 run of Iceman, Habibti, and Maid of Honour. The rollout has been deliberately cryptic, with Drake posting “FOMO 2026”, a CD case titled Fear of Missing Out, and now the September 15 YouTube announcement. Fans are speculating that it could be another music project, a visual project, or something entirely different.",
-        tracks: [
-            "NO TRACKS YET"
-        ]
+        description: "FOMO / Fear of Missing Out is Drake’s mysterious next project following his 2026 run of Iceman, Habibti, and Maid of Honor. The rollout has been deliberately cryptic, with Drake posting “FOMO 2026”, a CD case titled Fear of Missing Out, and now the September 15 YouTube announcement. Fans are speculating that it could be another music project, a visual project, or something entirely different."
     }
 ];
 
@@ -624,6 +621,17 @@ const albums = [
     const scrollHint = document.getElementById('scrollHint');
     const introView = document.getElementById('introView');
     const albumView = document.getElementById('albumView');
+    const contentPanel = document.getElementById('contentPanel');
+    const albumCoverGlyph = document.getElementById('albumCoverGlyph');
+    const albumType = document.getElementById('albumType');
+    const albumYear = document.getElementById('albumYear');
+    const albumDescription = document.getElementById('albumDescription');
+    const albumStars = document.getElementById('albumStars');
+    const albumScore = document.getElementById('albumScore');
+    const albumRating = document.querySelector('.album-rating');
+    const spotifyOpen = document.getElementById('spotify-open');
+    const spotifyPlayer = document.getElementById('spotifyPlayer');
+    const spotifyContainer = document.getElementById('spotifyPlayerContainer');
 
 
     /* ------------------------------------------------------------
@@ -734,65 +742,55 @@ const albums = [
         albumView.classList.toggle('is-visible', !showIntro);
         introBtn.classList.toggle('is-active', showIntro);
         scrollHint.classList.toggle('is-hidden', !showIntro);
-        const contentPanel = document.getElementById("contentPanel");
+
         if (showIntro) {
             document.documentElement.style.setProperty('--gold', DEFAULT_GOLD);
-
-
             contentPanel.style.background = '';
             contentPanel.style.color = '';
-
             contentPanel.scrollTop = 0;
-
             introBtn.innerText = "LAST";
             introBtn.onclick = () => setActive(albums.length - 1);
-
             return;
         }
 
-        contentPanel.style.overflowY = 'hidden';
-
         const album = albums[activeIndex];
 
-        document.getElementById('albumCoverLarge').src = album.image;
-        document.getElementById('albumCoverGlyph').src = album.image;
-        document.getElementById('albumType').textContent = album.type.toUpperCase();
+        albumCoverGlyph.src = album.image;
+        albumType.textContent = album.type.toUpperCase();
         animateTitle(album.title, direction);
-        document.getElementById('albumYear').textContent = album.year;
-        document.getElementById('albumDescription').textContent = album.description;
-        document.getElementById('spotifyPlayer').src = album.spotify;
+        albumYear.textContent = album.year;
+        albumDescription.textContent = album.description;
 
         contentPanel.style.background = album.bcolor;
         contentPanel.style.color = album.color;
-
         document.documentElement.style.setProperty('--gold', album.color);
 
         introBtn.innerText = "FIRST";
         introBtn.onclick = () => setActive(-1);
 
-        const filled = Math.round(album.rating);
-        let starString = '';
-
-        for (let i = 0; i < 10; i++){
-            starString += i < filled
-                ? '★'
-                : '<span class="dim">★</span>';
+        if (album.rating) {
+            albumRating.hidden = false;
+            const filled = Math.round(album.rating);
+            let starString = '';
+            for (let i = 0; i < 10; i++){
+                starString += i < filled
+                    ? '★'
+                    : '<span class="dim">★</span>';
+            }
+            albumStars.innerHTML = starString;
+            albumScore.innerHTML = `${album.rating.toFixed(1)} <span>/ 10</span>`;
+        } else {
+            albumRating.hidden = true;
         }
 
-        document.getElementById('albumStars').innerHTML = starString;
-
-        document.getElementById('albumScore').innerHTML =
-            `${album.rating.toFixed(1)} <span>/ 10</span>`;
-
-        const tracksEl = document.getElementById('albumTracks');
-        tracksEl.innerHTML = '';
-
-        album.tracks.forEach(track => {
-            const li = document.createElement('li');
-
-            li.appendChild(document.createTextNode(track));
-            tracksEl.appendChild(li);
-        });
+        if (album.spotify) {
+            spotifyOpen.hidden = false;
+            spotifyPlayer.src = album.spotify;
+        } else {
+            spotifyOpen.hidden = true;
+            spotifyPlayer.removeAttribute('src');
+            spotifyContainer.style.visibility = 'hidden';
+        }
 
         contentPanel.scrollTop = 0;
     }
