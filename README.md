@@ -124,7 +124,7 @@ Drake's name, music, album artwork, and related assets belong to their respectiv
 
 **elemeTr0**
 
-Built with curiosity, code, and way too much Drake.
+Built with the assistance of Claude and ChatGPT.
 
 ---
 
