@@ -16,7 +16,7 @@ const albums = [
         bcolor: "#040404",
         type: "Mixtape",
         rating: 8.7,
-        image: "src/albumCovers/so-far-gone.jpg",
+        image: "src/assets/albumCovers/so-far-gone.jpg",
         description: "The project that transformed Drake from a promising Toronto rapper and actor into a genuine star. So Far Gone blends introspective rap, atmospheric production, and R&B into a sound that would become hugely influential throughout the next decade.",
         tracks: [
             "Lust for Life",
@@ -47,7 +47,7 @@ const albums = [
         bcolor: "black",
         type: "Studio Album",
         rating: 7.8,
-        image: "src/albumCovers/thank-me-later.jpg",
+        image: "src/assets/albumCovers/thank-me-later.jpg",
         description: "Drake's major-label debut, released under enormous expectations following the success of So Far Gone. The album balances introspective songwriting with polished pop and hip-hop production while establishing Drake as a major commercial artist.",
         tracks: [
             "Fireworks",
@@ -75,7 +75,7 @@ const albums = [
         bcolor: "#2E1F17",
         type: "Studio Album",
         rating: 9.4,
-        image: "src/albumCovers/take-care.jpg",
+        image: "src/assets/albumCovers/take-care.jpg",
         description: "Drake's defining album and one of the most influential rap and R&B records of the 2010s. Its atmospheric production, emotional vulnerability, and seamless blending of singing and rapping established the sound that would become synonymous with Drake.",
         tracks: [
             "Over My Dead Body",
@@ -109,7 +109,7 @@ const albums = [
         bcolor: "#013351",
         type: "Studio Album",
         rating: 8.9,
-        image: "src/albumCovers/NWST.jpg",
+        image: "src/assets/albumCovers/NWST.jpg",
         description: "A more confident and polished Drake emerges on Nothing Was the Same. The album combines expansive production with sharper rapping and some of his biggest records, marking a shift from vulnerable newcomer to established superstar.",
         tracks: [
             "Tuscan Leather",
@@ -138,7 +138,7 @@ const albums = [
         bcolor: "#D9D9DB",
         type: "Mixtape",
         rating: 8.6,
-        image: "src/albumCovers/IYRTITL.jpg",
+        image: "src/assets/albumCovers/IYRTITL.jpg",
         description: "A surprise mixtape that showed Drake at his most aggressive and rap-focused. Dark production, confident performances, and minimal emphasis on crossover appeal made it one of the most respected projects of his career.",
         tracks: [
             "Legend",
@@ -170,7 +170,7 @@ const albums = [
         bcolor: "#34343C",
         type: "Collaborative Album",
         rating: 7.3,
-        image: "src/albumCovers/what-a-time-to-be-alive.jpg",
+        image: "src/assets/albumCovers/what-a-time-to-be-alive.jpg",
         description: "A rapid-fire collaboration between Drake and Future built around Metro Boomin's trap-heavy production. The project is short, energetic, and unapologetically focused on flexing, partying, and chemistry between the two artists.",
         tracks: [
             "Digital Dash",
@@ -194,7 +194,7 @@ const albums = [
         bcolor: "#46535d",
         type: "Studio Album",
         rating: 7.5,
-        image: "src/albumCovers/views.jpg",
+        image: "src/assets/albumCovers/views.jpg",
         description: "A massive commercial success built around a cold, atmospheric vision of Toronto. Views contains some of Drake's biggest global hits, but its long runtime and uneven pacing made it one of his more divisive albums.",
         tracks: [
             "Keep the Family Close",
@@ -227,7 +227,7 @@ const albums = [
         bcolor: "#0A0909",
         type: "Playlist",
         rating: 8.2,
-        image: "src/albumCovers/more-life.jpg",
+        image: "src/assets/albumCovers/more-life.jpg",
         description: "A genre-spanning playlist that expands Drake's sound through dancehall, grime, Afrobeats, and contemporary R&B. Its relaxed structure gives Drake room to experiment with different styles and international influences.",
         tracks: [
             "Free Smoke",
@@ -262,7 +262,7 @@ const albums = [
         bcolor: "#2f2f2f",
         type: "Studio Album",
         rating: 7.0,
-        image: "src/albumCovers/scorpion.jpg",
+        image: "src/assets/albumCovers/scorpion.jpg",
         description: "A double album divided between rap and R&B, released during one of the biggest periods of Drake's career. Despite its massive collection of hits, the album's length and uneven sequencing make it a sprawling listen.",
         tracks: [
             "Survival",
@@ -300,7 +300,7 @@ const albums = [
         bcolor: "#0C0D0E",
         type: "Compilation",
         rating: 6.5,
-        image: "src/albumCovers/care-package.jpg",
+        image: "src/assets/albumCovers/care-package.jpg",
         description: "A collection of previously released loosies, singles, and unreleased tracks from Drake's early-to-mid 2010s run. Rather than functioning as a traditional album, Care Package serves as an archive of songs that helped define his most prolific era.",
         tracks: [
             "Dreams Money Can Buy",
@@ -330,7 +330,7 @@ const albums = [
         bcolor: "#1A1C08",
         type: "Mixtape",
         rating: 6.8,
-        image: "src/albumCovers/dld.jpg",
+        image: "src/assets/albumCovers/dld.jpg",
         description: "A loose collection of leaks, demos, and new material released during the pandemic. Dark Lane Demo Tapes feels intentionally informal, offering glimpses of different sounds while setting the stage for Drake's next era.",
         tracks: [
             "Deep Pockets",
@@ -357,7 +357,7 @@ const albums = [
         bcolor: "white",
         type: "Studio Album",
         rating: 6.9,
-        image: "src/albumCovers/clb.jpg",
+        image: "src/assets/albumCovers/clb.jpg",
         description: "A highly anticipated album centered around Drake's familiar themes of relationships, fame, and nightlife. Packed with major collaborations and chart-ready singles, Certified Lover Boy represents the peak of his feature-heavy commercial formula.",
         tracks: [
             "Champagne Poetry",
@@ -391,7 +391,7 @@ const albums = [
         bcolor: "#0D0F10",
         type: "Studio Album",
         rating: 7.6,
-        image: "src/albumCovers/honestly-nevermind.jpg",
+        image: "src/assets/albumCovers/honestly-nevermind.jpg",
         description: "One of Drake's biggest stylistic departures, replacing traditional rap production with house, dance, and electronic influences. The album prioritizes atmosphere and rhythm over bars, revealing a more experimental side of his sound.",
         tracks: [
             "Intro",
@@ -418,7 +418,7 @@ const albums = [
         bcolor: "#231928",
         type: "Collaborative Album",
         rating: 8.0,
-        image: "src/albumCovers/her-loss.jpg",
+        image: "src/assets/albumCovers/her-loss.jpg",
         description: "Drake and 21 Savage combine for a confident, chemistry-driven rap album. Her Loss is tighter and more focused than many of Drake's recent releases, with both artists leaning into competitive performances, punchlines, and sharp production.",
         tracks: [
             "Rich Flex",
@@ -447,7 +447,7 @@ const albums = [
         bcolor: "#0B0B08",
         type: "Studio Album",
         rating: 6.6,
-        image: "src/albumCovers/for-all-the-dogs.jpg",
+        image: "src/assets/albumCovers/for-all-the-dogs.jpg",
         description: "A lengthy return to Drake's rap-heavy sound after the experimentation of Honestly, Nevermind. The album features major collaborations and several standout performances, but its large tracklist makes the overall project feel inconsistent.",
         tracks: [
             "Virginia Beach",
@@ -483,7 +483,7 @@ const albums = [
         bcolor: "#0E1918",
         type: "Collaborative Album",
         rating: 6.4,
-        image: "src/albumCovers/some-sexy-songs.jpg",
+        image: "src/assets/albumCovers/some-sexy-songs.jpg",
         description: "A collaboration between Drake and PARTYNEXTDOOR centered heavily around R&B, romance, and late-night atmosphere. The project leans into the melodic side of both artists while keeping the production relatively minimal and intimate.",
         tracks: [
             "CN TOWER",
@@ -517,7 +517,7 @@ const albums = [
         bcolor: "#0C0A0A",
         type: "Mixtape",
         rating: 6.0,
-        image: "src/albumCovers/iceman.jpg",
+        image: "src/assets/albumCovers/iceman.jpg",
         description: "Drake's latest project, representing his current creative direction and the newest chapter in his constantly evolving catalog. ICEMAN explores a colder and more stripped-back sound while continuing his long-running balance between rap, melody, and atmospheric production.",
         tracks: [
             "Make Them Cry",
@@ -548,7 +548,7 @@ const albums = [
         bcolor: "#D7C1A6",
         type: "Mixtape",
         rating: 6.8,
-        image: "src/albumCovers/habibti.jpg",
+        image: "src/assets/albumCovers/habibti.jpg",
         description: "A contemporary addition to Drake's catalog that leans into melodic songwriting and modern R&B influences. Habibti presents a more intimate side of Drake while experimenting with a softer, more atmospheric production style.",
         tracks: [
             "Rusty Intro",
@@ -572,7 +572,7 @@ const albums = [
         bcolor: "#4A3B3B",
         type: "Mixtape",
         rating: 6.8,
-        image: "src/albumCovers/maid-of-honor.jpg",
+        image: "src/assets/albumCovers/maid-of-honor.jpg",
         description: "A recent project that continues Drake's exploration of melodic rap and R&B while introducing another chapter in his evolving sound. The project focuses more on atmosphere and personal songwriting than the larger-than-life commercial approach of his earlier releases.",
         tracks: [
             "Hoe Phase",
@@ -598,7 +598,7 @@ const albums = [
         bcolor: "black",
         type: "OUT SEPTEMBER 15TH",
         rating: 0,
-        image: "src/albumCovers/fomo.jpg",
+        image: "set/assets/albumCovers/fomo.jpg",
         description: "FOMO / Fear of Missing Out is Drake’s mysterious next project following his 2026 run of Iceman, Habibti, and Maid of Honor. The rollout has been deliberately cryptic, with Drake posting “FOMO 2026”, a CD case titled Fear of Missing Out, and now the September 15 YouTube announcement. Fans are speculating that it could be another music project, a visual project, or something entirely different."
     }
 ];
