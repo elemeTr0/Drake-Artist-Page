@@ -674,6 +674,7 @@
     const list = document.getElementById("trackId");
     const record = document.getElementById("record");
     const buttons = document.getElementById("buttons");
+    const listContainer = document.getElementById("listContainer");
 
     /* ------------------------------------------------------------
        Build carousel DOM once. Each <li> is positioned every
@@ -781,6 +782,7 @@
 
         if (showIntro) {
             list.innerHTML = ""
+            listContainer.style.display = "none"
             document.documentElement.style.setProperty("--gold", DEFAULT_GOLD);
             contentPanel.style.background = "";
             contentPanel.style.color = "";
@@ -818,6 +820,7 @@
         introBtn.onclick = () => setActive(-1);
 
         if (album.rating) {
+            listContainer.style.display = "flex"
             buttons.style.visibility = "visible";
             albumRating.hidden = false;
             list.hidden = false;
@@ -829,9 +832,9 @@
             albumStars.innerHTML = starString;
             albumScore.innerHTML = `${album.rating.toFixed(1)} <span>/ 10</span>`;
         } else {
+            listContainer.style.display = "none"
             buttons.style.visibility = "hidden";
             albumRating.hidden = true;
-            list.hidden = true;
         }
 
         if (album.spotify) {
