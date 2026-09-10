@@ -20,7 +20,6 @@ body{
     background:var(--bg);
     color:var(--ink);
     font-family:'Inter', sans-serif;
-    overflow:hidden;
     -webkit-font-smoothing:antialiased;
 }
 ::selection{ background:var(--gold-soft); color:var(--ink); }
@@ -238,39 +237,42 @@ img {
     scrollbar-width:thin;
     scrollbar-color:rgba(242,237,228,0.15) transparent;
     transition:
-            background-color 0.4s ease,
-            color 0.4s ease;
+        background-color 0.4s ease,
+        color 0.4s ease;
 }
 
 .content-panel::-webkit-scrollbar{
     width:8px;
 }
-
 .content-panel::-webkit-scrollbar-thumb{
     background:rgba(242,237,228,0.12);
     border-radius:4px;
 }
 
-.view{
-    position:absolute;
+.view {
+   position:absolute;
     inset:0;
     padding:9vh 7vw 8vh;
+    max-height:100vh;
     opacity:0;
     transform:translateY(14px);
     pointer-events:none;
-    transition:opacity 420ms var(--ease), transform 420ms var(--ease);
+    transition:
+        opacity 420ms var(--ease),
+        transform 420ms var(--ease);
     box-sizing:border-box;
+    overflow:hidden;
 }
 
-.view.is-visible{
+.view.is-visible {
+    margin-bottom:10px;
     position:relative;
     opacity:1;
-    transform:translateY(0);
     pointer-events:auto;
     box-sizing:border-box;
     min-height:100vh;
+    overflow:visible;
 }
-
 /* --- Intro view --- */
 .intro-eyebrow{
     font-size:13px;
@@ -312,6 +314,7 @@ img {
 }
 .intro-body{
     max-width:600px;
+    max-height: 100vh;
     font-size:15px;
     line-height:1.75;
 }
@@ -429,7 +432,7 @@ img {
     font-size:19px;
     line-height:1.6;
     max-width:660px;
-    min-height: 350px;
+    min-height:10em;
     margin-bottom:44px;
 }
 .section-label{
@@ -452,6 +455,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 3px;
 
     height: 32px;
     padding: 0 0 0 12px;
@@ -463,7 +467,7 @@ img {
     font-size: 14px;
     letter-spacing: 1px;
 
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
 
     cursor: grab;
     user-select: none;
@@ -503,22 +507,19 @@ img {
     z-index: 1001;
 }
 #spotify-open {
-
-    position: absolute;
-    top: 90vh;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
 
-    width: 200px;
-    height: 42px;
+    width: 3em;
+    height: 3em;
 
     border: 1px solid rgba(255, 255, 255, 0.15);
     outline: none;
     border-radius: 50px;
 
-    background: #1ed760;
     color: #000;
+    background-color: #000;
 
     cursor: pointer;
 
@@ -532,7 +533,6 @@ img {
 }
 
 #spotify-open:hover {
-    background: #1fdf64;
 
     transform: translateY(-2px) scale(1.03);
 
@@ -544,14 +544,29 @@ img {
 #spotify-open:active {
     transform: translateY(0) scale(0.98);
 }
+#record{
+    border-radius: 50%;
+    width: 3em;
+    height: auto;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+#record:hover{
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow:
+            0 8px 25px var(--gold),
+            0 5px 15px var(--gold-soft);
+}
 .tracks {
-    padding: 0;
-    margin: 20px 0;
-    width: 100%;
-    margin-top: 0;
-    height: 100vh;
-    text-align: center;
-    overflow: auto;
+    padding:0;
+    margin:0;
+    width:100%;
+    margin-top:0;
+    height:100vh;
+    text-align:center;
+    overflow:auto;
 }
 
 .tracks li {
@@ -572,8 +587,8 @@ img {
 }
 /* ============ RESPONSIVE ============ */
 @media (max-width: 880px){
-    body{ overflow:auto; }
-    .app{ flex-direction:column; height:auto; min-height:100vh; }
+    body{ overflow:auto;}
+    .app{ flex-direction:column; height:auto; min-height:100vh;}
     .carousel-wrap{ width:100%; height:56vh; min-width:0; border-right:none; border-bottom:1px solid var(--line); }
     .content-panel{ width:100%; height:auto; overflow:visible; }
     .view{ position:relative; padding:7vh 6vw 8vh; }
@@ -599,13 +614,8 @@ img {
     max-width: calc(100vw - 32px);
     height: 50px;
 }
-    #spotify-open{
-        position:relative;
-        top:auto;
-        left:auto;
-        display:block;
-        width:200px;
-        max-width:100%;
-        margin:32px auto 0;
+
+    #asd{
+        flex-direction: column;
     }
 }

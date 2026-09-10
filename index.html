@@ -55,8 +55,8 @@
       <div class="intro-cta"><span class="arrow">↓</span> Scroll the carousel to begin</div>
     </section>
 
-    <div style="display: flex;">
-      <div style="width: 70em;">
+    <div id="asd" style="display: flex;">
+      <div style="width: 70em;max-height: 100vh;">
     <section class="view" id="albumView">
       <div class="album-head">
         <div class="album-cover-large" id="albumCoverLarge">
@@ -76,6 +76,11 @@
       </div>
 
       <p class="album-description" id="albumDescription"></p>
+
+      <div id="buttons" style="display: flex; align-items: center;">
+      <a><img src="src/assets/spotify.png" id="spotify-open"></a>
+      <a style="padding-left: 10px;"><img id="record"></a>
+    </div>
       </div>
 
       <div style="display: flex; flex: 1;">
@@ -86,7 +91,6 @@
 
       </div>
 
-      <button id="spotify-open">OPEN SPOTIFY PLAYER</button>
 
       <div class="spotify-player" id="spotifyPlayerContainer">
 
