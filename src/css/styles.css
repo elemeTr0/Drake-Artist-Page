@@ -27,6 +27,7 @@ body{
 .app{
     display:flex;
     width:100vw;
+    max-width: 100vw;
     height:100vh;
 }
 
@@ -252,8 +253,9 @@ img {
 
 .view {
    position:absolute;
+    width: 60vw;
     inset:0;
-    padding: 9vh 7vw 8vh;
+    padding: 9vh 0 8vh 7vw;
     max-height:100vh;
     opacity:0;
     pointer-events:none;
@@ -282,6 +284,7 @@ img {
 }
 #introView{
     max-height: 100%;
+    width: 100%;
     overflow-x: hidden;
 }
 #intro-img {
@@ -400,7 +403,7 @@ img {
 }
 .album-title{
     font-family:'Bebas Neue', sans-serif;
-    font-size:clamp(44px, 5.2vw, 78px);
+    font-size:clamp(1rem, 5.2vw, 50em);
     line-height:0.94;
     margin:0 0 10px;
     transition:
@@ -575,13 +578,19 @@ img {
     }
 }
 .tracks {
+    max-width: 30vw;
+    position: relative;
+    right: 0;
     padding:0;
     margin:0;
-    width:100%;
+    width:10vw;
     margin-top:0;
     height:100vh;
     text-align:center;
     overflow:auto;
+    flex:1;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(242,237,228,0.15) transparent;
 }
 
 .tracks li {
@@ -599,6 +608,10 @@ img {
 .tracks li:hover {
     background-color: rgba(255, 255, 255, 0.08);
     padding-left: 20px;
+}
+#listContainer{
+    max-width: 30vw;
+
 }
 /* ============ RESPONSIVE ============ */
 @media (max-width: 880px){
