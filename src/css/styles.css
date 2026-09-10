@@ -438,31 +438,6 @@ img {
     letter-spacing:0.14em;
     margin-bottom:16px;
 }
-.tracks-list{
-    list-style-type: decimal;
-    margin:0;
-    padding:0;
-    max-width:300px;
-    max-height: 200px;
-    overflow-y: auto;
-    scrollbar-width:thin;
-    scrollbar-color: var(--gold) transparent;
-}
-.tracks-list li{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:13px 0;
-    border-bottom:1px solid var(--gold);
-    font-size:15px;
-}
-.tracks-list li:last-child{ border-bottom:none; }
-.tracks-list .dot{
-    width:5px; height:5px;
-    border-radius:50%;
-    background:var(--gold);
-    flex-shrink:0;
-}
 
 .spotify-player {
     visibility: hidden;
@@ -568,6 +543,32 @@ img {
 
 #spotify-open:active {
     transform: translateY(0) scale(0.98);
+}
+.tracks {
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    margin-top: 0;
+    height: 100vh;
+    text-align: center;
+    overflow: auto;
+}
+
+.tracks li {
+    margin: 3px;
+    list-style: decimal;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 16px;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+    border-radius: 10px;
+    box-shadow: -10px 0px 6px -2px var(--gold),
+            -8px 0px 16px -6px var(--gold);
+}
+
+.tracks li:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding-left: 20px;
 }
 /* ============ RESPONSIVE ============ */
 @media (max-width: 880px){

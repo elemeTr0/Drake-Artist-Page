@@ -598,8 +598,9 @@ const albums = [
         bcolor: "black",
         type: "OUT SEPTEMBER 15TH",
         rating: 0,
-        image: "set/assets/albumCovers/fomo.jpg",
-        description: "FOMO / Fear of Missing Out is Drake’s mysterious next project following his 2026 run of Iceman, Habibti, and Maid of Honor. The rollout has been deliberately cryptic, with Drake posting “FOMO 2026”, a CD case titled Fear of Missing Out, and now the September 15 YouTube announcement. Fans are speculating that it could be another music project, a visual project, or something entirely different."
+        image: "src/assets/albumCovers/fomo.jpg",
+        description: "FOMO / Fear of Missing Out is Drake’s mysterious next project following his 2026 run of Iceman, Habibti, and Maid of Honor. The rollout has been deliberately cryptic, with Drake posting “FOMO 2026”, a CD case titled Fear of Missing Out, and now the September 15 YouTube announcement. Fans are speculating that it could be another music project, a visual project, or something entirely different.",
+        tracks: []
     }
 ];
 
@@ -756,11 +757,23 @@ const albums = [
 
         const album = albums[activeIndex];
 
+
         albumCoverGlyph.src = album.image;
         albumType.textContent = album.type.toUpperCase();
         animateTitle(album.title, direction);
         albumYear.textContent = album.year;
         albumDescription.textContent = album.description;
+
+        const list = document.getElementById("trackId");
+        if (list) {
+        list.innerHTML = "";
+}
+
+        for(let i = 0; i<album.tracks.length;i++){
+            const li = document.createElement("li");
+            li.textContent = album.tracks[i];
+            list.appendChild(li);
+        }
 
         contentPanel.style.background = album.bcolor;
         contentPanel.style.color = album.color;
@@ -771,6 +784,7 @@ const albums = [
 
         if (album.rating) {
             albumRating.hidden = false;
+            list.hidden = false;
             const filled = Math.round(album.rating);
             let starString = '';
             for (let i = 0; i < 10; i++){
@@ -782,6 +796,7 @@ const albums = [
             albumScore.innerHTML = `${album.rating.toFixed(1)} <span>/ 10</span>`;
         } else {
             albumRating.hidden = true;
+            list.hidden = true;
         }
 
         if (album.spotify) {
