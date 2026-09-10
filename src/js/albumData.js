@@ -672,6 +672,8 @@
     const spotifyPlayer = document.getElementById("spotifyPlayer");
     const spotifyContainer = document.getElementById("spotifyPlayerContainer");
     const list = document.getElementById("trackId");
+    const record = document.getElementById("record");
+    const buttons = document.getElementById("buttons");
 
     /* ------------------------------------------------------------
        Build carousel DOM once. Each <li> is positioned every
@@ -772,8 +774,6 @@
     function renderContent(direction) {
         const showIntro = activeIndex === -1;
 
-        const record = document.getElementById("record");
-
         introView.classList.toggle("is-visible", showIntro);
         albumView.classList.toggle("is-visible", !showIntro);
         introBtn.classList.toggle("is-active", showIntro);
@@ -818,6 +818,7 @@
         introBtn.onclick = () => setActive(-1);
 
         if (album.rating) {
+            buttons.style.visibility = "visible";
             albumRating.hidden = false;
             list.hidden = false;
             const filled = Math.round(album.rating);
@@ -828,6 +829,7 @@
             albumStars.innerHTML = starString;
             albumScore.innerHTML = `${album.rating.toFixed(1)} <span>/ 10</span>`;
         } else {
+            buttons.style.visibility = "hidden";
             albumRating.hidden = true;
             list.hidden = true;
         }

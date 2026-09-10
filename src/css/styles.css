@@ -230,6 +230,9 @@ img {
 .content-panel{
     background:#000000;
     position:relative;
+
+    margin-top: 0px;
+    padding-top: 0;
     width:100%;
     height:100vh;
     overflow-y:hidden;
@@ -252,7 +255,7 @@ img {
 .view {
    position:absolute;
     inset:0;
-    padding:9vh 7vw 8vh;
+    padding: 9vh 7vw 8vh;
     max-height:100vh;
     opacity:0;
     transform:translateY(14px);
@@ -280,10 +283,11 @@ img {
     letter-spacing:0.06em;
     margin-bottom:18px;
 }
+
 #intro-img {
     position: absolute;
     right: -100px;
-    top: 0;
+    top: -20px;
     height: 100vh;
     max-width: 800px;
     object-fit: cover;
